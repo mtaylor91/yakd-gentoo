@@ -32,4 +32,6 @@ src_install() {
 	newbashcomp ${PN}.bash ${PN}
 	insinto /usr/share/zsh/site-functions
 	newins ${PN}.zsh _${PN}
+	insinto /etc/systemd/system/kubelet.service.d
+	newins "${FILESDIR}/10-${PN}.conf" 10-${PN}.conf
 }
